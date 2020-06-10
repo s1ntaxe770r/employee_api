@@ -1,10 +1,11 @@
 from rest_framework import routers
+from django.urls import path,include
 from .api import EmployeesViewset
 
 router = routers.DefaultRouter()
 
-router.register('api/v1/employees/',EmployeesViewset,'employees')
+router.register('employees',EmployeesViewset,'employees')
 
-urlpatterns = router.urls
+urlpatterns = [ path('api/v1/',include(router.urls))]
 
 
