@@ -10,5 +10,5 @@ class Employees(models.Model):
     date_hired = models.DateField(default=datetime.date.today)
 
     def __str__(self):
-    	return self.employee_id
+    	return self.name
 
